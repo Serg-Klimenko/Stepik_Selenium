@@ -8,9 +8,9 @@ try:
     browser.get(link)
     num1 = browser.find_element_by_id("num1").text
     num2 = browser.find_element_by_id("num2").text
-    sum = int(num1) + int(num2)
+    s = int(num1) + int(num2)
     browser.find_element_by_tag_name("select").click()
-    browser.find_element_by_css_selector(f"[value='{sum}'").click()
+    browser.find_element_by_css_selector(f"[value='{s}'").click()
     browser.find_element_by_css_selector("button.btn").click()
 finally:
     time.sleep(30)
