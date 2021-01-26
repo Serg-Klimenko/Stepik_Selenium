@@ -14,6 +14,12 @@ def browser():
     browser.quit()
 
 
+@pytest.fixture(autouse=True)
+def prepare_data():
+    print()
+    print("preparing some critical data for every test")
+
+
 class TestMainPage1():
     # call fixture in the test (send it as atribute)
     def test_guest_should_see_login_link(self, browser):
