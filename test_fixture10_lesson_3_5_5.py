@@ -8,7 +8,9 @@ link = "http://selenium1py.pythonanywhere.com/"
 @pytest.fixture(scope="function")
 def browser():
     print("\nstart browser for test..")
-    browser = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    browser = webdriver.Chrome(options=options)
     yield browser
     # this part will be execute after test was finished
     print("\nquit browser..")
